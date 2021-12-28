@@ -18,20 +18,21 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 
   const onEditorDidMount: EditorDidMount = (getEditorValue, monacoEditor) => {
     editorRef.current = monacoEditor;
-    const code = getEditorValue();
-    monacoEditor.onDidChangeModelContent(() => onChange(code));
+    monacoEditor.onDidChangeModelContent(() => onChange(getEditorValue()));
     monacoEditor.getModel()?.updateOptions({ tabSize: 2 });
 
     const babelParse = (code: string) =>
       parse(code, { sourceType: "module", plugins: ["jsx"] });
 
-    new MonacoJSXHighlighter(
+    const highlighter = new MonacoJSXHighlighter(
       //@ts-ignore
       window.monaco,
       babelParse,
       traverse,
       monacoEditor
     );
+
+    highlighter.addJSXCommentCommand();
   };
 
   const onFormatClick = () => {
