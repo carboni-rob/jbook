@@ -8,7 +8,6 @@ const App = () => {
   const ref = useRef<any>();
   const iframe = useRef<any>();
   const [input, setInput] = useState("");
-  const [code, setCode] = useState("");
 
   useEffect(() => {
     startService();
@@ -24,6 +23,7 @@ const App = () => {
   const onClick = async () => {
     if (!ref.current) return;
 
+    // reset iframe content
     iframe.current.srcdoc = html;
 
     const result = await ref.current.build({
@@ -70,7 +70,6 @@ const App = () => {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <pre>{code}</pre>
       <iframe
         ref={iframe}
         sandbox="allow-scripts"
