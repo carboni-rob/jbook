@@ -1,3 +1,4 @@
+import "./preview.css";
 import React, { useEffect, useRef } from "react";
 
 interface Props {
