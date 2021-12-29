@@ -31,7 +31,11 @@ const Preview: React.FC<Props> = ({ code }: Props): JSX.Element => {
   useEffect(() => {
     // reset iframe content
     iframe.current.srcdoc = html;
-    iframe.current.contentWindow.postMessage(code, "*");
+
+    // send code to iframe, debounce to be sure it has time to post message
+    setTimeout(() => {
+      iframe.current.contentWindow.postMessage(code, "*");
+    }, 50);
   }, [code]);
 
   return (
