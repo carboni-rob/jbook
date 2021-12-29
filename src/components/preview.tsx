@@ -6,7 +6,7 @@ interface Props {
   status: string;
 }
 
-const html = `
+const successHtml = `
     <html>
       <head></head>
       <body>
@@ -40,7 +40,7 @@ const Preview: React.FC<Props> = ({ code, status }: Props): JSX.Element => {
 
   useEffect(() => {
     // reset iframe content
-    iframe.current.srcdoc = html;
+    iframe.current.srcdoc = successHtml;
 
     // send code to iframe, debounce to be sure there is time to post message
     setTimeout(() => {
@@ -49,12 +49,15 @@ const Preview: React.FC<Props> = ({ code, status }: Props): JSX.Element => {
   }, [code]);
 
   return (
-    <iframe
-      ref={iframe}
-      sandbox="allow-scripts"
-      srcDoc={html}
-      title="preview"
-    />
+    <div className="preview-wrapper">
+      <iframe
+        ref={iframe}
+        sandbox="allow-scripts"
+        srcDoc={successHtml}
+        title="preview"
+      />
+      {status !== "" && <div className="preview-error">{status}</div>}
+    </div>
   );
 };
 
