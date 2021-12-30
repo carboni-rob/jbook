@@ -1,10 +1,10 @@
+import "./text-editor.css";
 import { useEffect, useRef, useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 
-interface Props {}
-
-const TextEditor = (props: Props): JSX.Element => {
+const TextEditor = (): JSX.Element => {
   const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState("# Header");
   const editorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -26,15 +26,22 @@ const TextEditor = (props: Props): JSX.Element => {
 
   if (editing) {
     return (
-      <div ref={editorRef}>
-        <MDEditor />
+      <div className="text-editor" ref={editorRef}>
+        <MDEditor
+          value={value}
+          onChange={(newValue) => {
+            setValue(newValue || "");
+          }}
+        />
       </div>
     );
   }
 
   return (
-    <div onClick={() => setEditing(true)}>
-      <MDEditor.Markdown source={"# Header"} />
+    <div className="text-editor card" onClick={() => setEditing(true)}>
+      <div className="card-content">
+        <MDEditor.Markdown source={value} />
+      </div>
     </div>
   );
 };
