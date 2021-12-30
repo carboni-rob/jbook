@@ -30,7 +30,7 @@ const cellsReducer = produce(
         state.order = state.order.filter((id) => id !== action.payload);
 
         return state;
-      case ActionTypes.INSERT_CELL_BEFORE:
+      case ActionTypes.INSERT_CELL_AFTER:
         const cell: Cell = {
           cellId: randomId(),
           content: "",
@@ -42,9 +42,9 @@ const cellsReducer = produce(
           (id) => id === action.payload.cellId
         );
         if (targetIndex === -1) {
-          state.order.push(cell.cellId);
+          state.order.unshift(cell.cellId);
         } else {
-          state.order.splice(targetIndex, 0, cell.cellId);
+          state.order.splice(targetIndex + 1, 0, cell.cellId);
         }
 
         return state;
@@ -54,8 +54,9 @@ const cellsReducer = produce(
         const destinationIndex =
           direction === "up" ? cellIndex - 1 : cellIndex + 1;
 
-        if (destinationIndex < 0 || destinationIndex > state.order.length - 1)
-          break;
+        if (destinationIndex < 0 || destinationIndex > state.order.length - 1) {
+          return state;
+        }
 
         state.order[cellIndex] = state.order[destinationIndex];
         state.order[destinationIndex] = action.payload.cellId;
