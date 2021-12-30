@@ -22,7 +22,17 @@ const cellsReducer = (
 ): CellsState => {
   switch (action.type) {
     case ActionTypes.UPDATE_CELL:
-      return state;
+      const { cellId, content } = action.payload;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          [cellId]: {
+            ...state.data[cellId],
+            content: content,
+          },
+        },
+      };
     case ActionTypes.DELETE_CELL:
       return state;
     case ActionTypes.INSERT_CELL_BEFORE:
