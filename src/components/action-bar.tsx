@@ -3,13 +3,14 @@ import { useActions } from "../hooks/use-actions";
 
 interface Props {
   id: string;
+  className?: string;
 }
 
-const ActionBar = ({ id }: Props): JSX.Element => {
+const ActionBar = ({ id, className }: Props): JSX.Element => {
   const { moveCell, deleteCell } = useActions();
 
   return (
-    <div className="action-bar">
+    <div className={`action-bar ${className}`}>
       <button
         className="button is-primary is-small"
         title="Move up"
