@@ -44,7 +44,7 @@ const Preview: React.FC<Props> = ({ code, status }: Props): JSX.Element => {
 
     // send code to iframe, debounce to be sure there is time to post message
     setTimeout(() => {
-      iframe.current.contentWindow.postMessage(code, "*");
+      iframe.current.contentWindow?.postMessage(code, "*");
     }, 50);
   }, [code]);
 

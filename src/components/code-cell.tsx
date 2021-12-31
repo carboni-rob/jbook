@@ -6,6 +6,7 @@ import Resizable from "./resizable";
 import { Cell } from "../state";
 import { useActions } from "../hooks/use-actions";
 import { useTypedSelector } from "../hooks/use-typed-selector";
+import { useCumulativeCode } from "../hooks/use-cumulative-code";
 
 interface Props {
   cell: Cell;
@@ -16,26 +17,28 @@ const CodeCell: React.FC<Props> = ({ cell }) => {
   const bundle = useTypedSelector((state) =>
     state.bundle ? state.bundle[cell.cellId] : null
   );
+  const cumulativeCode = useCumulativeCode(cell.cellId);
+
   const isLoading = !bundle || bundle.loading;
 
   useEffect(() => {
     if (!bundle) {
-      createBundle(cell.cellId, cell.content);
+      createBundle(cell.cellId, cumulativeCode);
     }
 
     const timer = setTimeout(async () => {
-      createBundle(cell.cellId, cell.content);
-    }, 1000);
+      createBundle(cell.cellId, cumulativeCode);
+    }, 750);
 
     return () => {
       clearTimeout(timer);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cell.content, cell.cellId, createBundle]);
+  }, [cell.content, cell.cellId, createBundle, cumulativeCode]);
 
   return (
     <Resizable direction="vertical">
-      <div style={{ height: "100%", display: "flex", flexDirection: "row" }}>
+      <div className="code-cell">
         <Resizable direction="horizontal">
           <CodeEditor
             initialValue={cell.content}
