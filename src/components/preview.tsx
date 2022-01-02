@@ -39,7 +39,6 @@ const Preview: React.FC<Props> = ({ code, status }: Props): JSX.Element => {
   const iframe = useRef<any>();
 
   useEffect(() => {
-    // reset iframe content
     iframe.current.srcdoc = successHtml;
 
     // send code to iframe, debounce to be sure there is time to post message

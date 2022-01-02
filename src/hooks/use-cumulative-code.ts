@@ -10,8 +10,9 @@ export const useCumulativeCode = (cellId: string) => {
           // Avoid naming collisions by using _React and _ReactDOM for the 'show()' function
           import _React from "react";
           import _ReactDOM from "react-dom";
+          const rootElement = document.querySelector("#root");
+          rootElement.innerHTML = "";
           var show = (value) => {
-            const rootElement = document.querySelector("#root");
             if (typeof value === 'object') {
               if (value.$$typeof && value.props) {
                 _ReactDOM.render(value, rootElement);
@@ -25,6 +26,7 @@ export const useCumulativeCode = (cellId: string) => {
         `;
 
     const showFuncNoop = "var show = () => {}";
+
     const cumulativeCode = [];
 
     for (let c of orderedCells) {

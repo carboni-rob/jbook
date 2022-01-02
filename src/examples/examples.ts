@@ -13,15 +13,18 @@ export const headerTextCell: Cell = {
 
 ### What can you do?
 
-- You can write plain Javascript in a code cell, it will be immediately evaluated, bundled and its result shown in the preview window. The whole process happens **in the browser**, no external API calls. This makes it much faster than the common online editors (CodePen, JSFiddle, etc.):
+- You can write plain Javascript in a code cell, it will be immediately evaluated, bundled and its result shown in the preview window. The whole process happens **in the browser**, no external API calls. This makes it much faster than the commonly used online editors (CodePen, JSFiddle, etc.):
 `,
 };
 
 export const plainJSCodeCell: Cell = {
   cellId: "examples-plain-js",
   type: "code",
-  content: `const newDiv = document.createElement('div');
-const newContent = document.createTextNode('You can write plain Javascript in a code cell. It will be evaluted and bundled in the browser. You will immediately see the result here.');
+  content: `// You can access the preiew iframe via the #root element
+const newDiv = document.createElement('div');
+const newContent = document.createTextNode(
+'You can write plain Javascript in a code cell. It will be evaluted and bundled in the browser. You will immediately see the result here.'
+);
 newDiv.appendChild(newContent);
-document.body.append(newDiv);`,
+document.querySelector('#root').append(newDiv);`,
 };
