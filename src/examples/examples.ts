@@ -3,7 +3,7 @@ import { Cell } from "../state/cell";
 const headerTextCell: Cell = {
   cellId: "examples-header",
   type: "text",
-  content: `![](https://carboni-rob.github.io/js-notebook-web/public/carbonCoding_white.png)
+  content: `![](https://carboni-rob.github.io/js-notebook-web/carbonCoding_white.png)
 # JS-Notebook
 ### Features:
 
