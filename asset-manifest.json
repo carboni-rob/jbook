@@ -1032,26 +1032,26 @@
     "static/js/514.036e6982.chunk.js.map": "/js-notebook-web/static/js/514.036e6982.chunk.js.map",
     "static/js/515.c1dc9346.chunk.js": "/js-notebook-web/static/js/515.c1dc9346.chunk.js",
     "static/js/515.c1dc9346.chunk.js.map": "/js-notebook-web/static/js/515.c1dc9346.chunk.js.map",
-    "main.css": "/js-notebook-web/static/css/main.fc4ab040.chunk.css",
-    "main.js": "/js-notebook-web/static/js/main.2b20d239.chunk.js",
-    "main.js.map": "/js-notebook-web/static/js/main.2b20d239.chunk.js.map",
+    "main.css": "/js-notebook-web/static/css/main.89804ba0.chunk.css",
+    "main.js": "/js-notebook-web/static/js/main.b2cc508a.chunk.js",
+    "main.js.map": "/js-notebook-web/static/js/main.b2cc508a.chunk.js.map",
     "runtime-main.js": "/js-notebook-web/static/js/runtime-main.52f0184e.js",
     "runtime-main.js.map": "/js-notebook-web/static/js/runtime-main.52f0184e.js.map",
     "static/css/518.ff15dfef.chunk.css": "/js-notebook-web/static/css/518.ff15dfef.chunk.css",
-    "static/js/518.098f1897.chunk.js": "/js-notebook-web/static/js/518.098f1897.chunk.js",
-    "static/js/518.098f1897.chunk.js.map": "/js-notebook-web/static/js/518.098f1897.chunk.js.map",
+    "static/js/518.96fc9b5f.chunk.js": "/js-notebook-web/static/js/518.96fc9b5f.chunk.js",
+    "static/js/518.96fc9b5f.chunk.js.map": "/js-notebook-web/static/js/518.96fc9b5f.chunk.js.map",
     "index.html": "/js-notebook-web/index.html",
     "static/css/518.ff15dfef.chunk.css.map": "/js-notebook-web/static/css/518.ff15dfef.chunk.css.map",
-    "static/css/main.fc4ab040.chunk.css.map": "/js-notebook-web/static/css/main.fc4ab040.chunk.css.map",
-    "static/js/518.098f1897.chunk.js.LICENSE.txt": "/js-notebook-web/static/js/518.098f1897.chunk.js.LICENSE.txt",
+    "static/css/main.89804ba0.chunk.css.map": "/js-notebook-web/static/css/main.89804ba0.chunk.css.map",
+    "static/js/518.96fc9b5f.chunk.js.LICENSE.txt": "/js-notebook-web/static/js/518.96fc9b5f.chunk.js.LICENSE.txt",
     "static/js/82.309ade44.chunk.js.LICENSE.txt": "/js-notebook-web/static/js/82.309ade44.chunk.js.LICENSE.txt",
     "static/media/all.min.css": "/js-notebook-web/static/media/fa-solid-900.eeccf4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.52f0184e.js",
     "static/css/518.ff15dfef.chunk.css",
-    "static/js/518.098f1897.chunk.js",
-    "static/css/main.fc4ab040.chunk.css",
-    "static/js/main.2b20d239.chunk.js"
+    "static/js/518.96fc9b5f.chunk.js",
+    "static/css/main.89804ba0.chunk.css",
+    "static/js/main.b2cc508a.chunk.js"
   ]
 }
