@@ -3,7 +3,8 @@ import { Cell } from "../state/cell";
 const headerTextCell: Cell = {
   cellId: "examples-header",
   type: "text",
-  content: `# CarbonCoding's JS-Notebook
+  content: `![](https://carboni-rob.github.io/js-notebook-web/public/carbonCoding_white.png)
+# JS-Notebook
 ### Features:
 
 - Inspired to how [Jupyter Notebooks](https://hub.mybinder.turing.ac.uk/user/ipython-ipython-in-depth-gc63wy6f/notebooks/binder/Index.ipynb) work, features multiple rich markdown editors and live code cells;
