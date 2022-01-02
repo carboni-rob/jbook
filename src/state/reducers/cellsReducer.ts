@@ -2,6 +2,7 @@ import produce from "immer";
 import { ActionTypes } from "../action-types";
 import { Action } from "../actions";
 import { Cell } from "../cell";
+import { headerTextCell, plainJSCodeCell } from "../../examples/examples";
 
 interface CellsState {
   loading: boolean;
@@ -13,8 +14,11 @@ interface CellsState {
 const initialState: CellsState = {
   loading: false,
   error: null,
-  order: [],
-  data: {},
+  order: [headerTextCell.cellId, plainJSCodeCell.cellId],
+  data: {
+    [headerTextCell.cellId]: headerTextCell,
+    [plainJSCodeCell.cellId]: plainJSCodeCell,
+  },
 };
 
 const cellsReducer = produce(
