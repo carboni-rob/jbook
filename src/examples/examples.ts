@@ -79,7 +79,7 @@ const importCSSTextCell: Cell = {
 const importCSSCodeCell: Cell = {
   cellId: "examples-import-css-code",
   type: "code",
-  content: `import 'bulmaswatch/superhero/bulmaswatch.min.css';
+  content: `import 'bulmaswatch/default/bulmaswatch.min.css';
 
 const button = document.createElement('button');
 button.textContent = 'I am a styled button';
@@ -124,7 +124,7 @@ const App = () => {
 
   React.useEffect(() => {
     setCounter(10);
-  });
+  }, []);
 
   return (
     <>
