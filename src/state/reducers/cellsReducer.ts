@@ -27,8 +27,13 @@ const cellsReducer = produce(
 
         return state;
       case ActionTypes.DELETE_CELL:
-        delete state.data[action.payload];
-        state.order = state.order.filter((id) => id !== action.payload);
+        const confirm = window.confirm(
+          "Are you sure you want to delete this cell? This action cannot be undone."
+        );
+        if (confirm) {
+          delete state.data[action.payload];
+          state.order = state.order.filter((id) => id !== action.payload);
+        }
 
         return state;
       case ActionTypes.INSERT_CELL_AFTER:
