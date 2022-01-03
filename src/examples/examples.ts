@@ -127,21 +127,27 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <button
-        className="button is-info"
-        onClick={() => setCounter(counter + 1)}
-      >
-        Increment
-      </button>
-      <button
-        className="button is-success"
-        onClick={() => setCounter(counter - 1)}
-      >
-        Decrement
-      </button>
-      <h4 className="title is-4">Count: {counter}</h4>
-    </>
+    <div className="box">
+      <div className="block">
+        <button
+          className="button is-info"
+          onClick={() => setCounter(counter + 1)}
+        >
+          Increment
+        </button>
+      </div>
+      <div className="block">
+        <button
+          className="button is-success"
+          onClick={() => setCounter(counter - 1)}
+        >
+          Decrement
+        </button>
+      </div>
+      <div className="block">
+        <h4 className="title is-4">Count: {counter}</h4>
+      </div>
+    </div>
   );
 };
 
